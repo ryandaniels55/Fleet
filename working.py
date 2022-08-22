@@ -10,14 +10,14 @@ from selenium.webdriver import Firefox
 import os
 from selenium.webdriver.common.by import By
 from selenium.webdriver.common.keys import Keys
-from selenium.webdriver.support.ui import WebDriverWait
-from selenium.webdriver.support import expected_conditions as EC
+# from selenium.webdriver.support.ui import WebDriverWait
+# from selenium.webdriver.support import expected_conditions as EC
 
-WebDriverWait(driver, timeout)
+# WebDriverWait(driver, timeout)
 
 driver_path = os.getcwd() + '/geckodriver-v0.31.0-linux64/geckodriver'
 
-# driver = Firefox(executable_path=driver_path)
+driver = Firefox(executable_path=driver_path)
 
 driver.get('https://suite.auterion.com/flights?type=flight&page=1&sortDirection=desc&sortBy=date')
 app = driver.find_element(By.ID,'app')
@@ -27,7 +27,7 @@ email = driver.find_element(By.CLASS_NAME, 'email')
 email.send_keys('ryan.daniels@wattsinnovations.com') #Insert email here
 
 password = driver.find_element(By.CLASS_NAME, 'password')
-password.send_keys('xxxxxxx') #Insert password here
+password.send_keys('xxxxxx') #Insert password here
 
 # args = ('css selector', ".email")
 # driver.find_element(*args)
