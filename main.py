@@ -7,6 +7,8 @@ import pandas as pd
 from urllib.request import urlopen, Request
 import requests
 from bs4 import BeautifulSoup
+import json
+from selenium import webdriver
 
 cookies = {
     '_ga': 'GA1.2.1782632834.1660594045',
@@ -40,60 +42,74 @@ params = {
     'sortBy': 'date',
 }
 
-response = requests.get('https://suite.auterion.com/flights?page=1&sortDirection=desc&sortBy=date', params=params, cookies=cookies, headers=headers)
+response = requests.get('https://suite.auterion.com/flights?type=flight&page=1&sortDirection=desc&sortBy=date', params=params, cookies=cookies, headers=headers)
+
+print(response.text)
 
 soup = BeautifulSoup(response.content, 'html.parser')
+print(soup.prettify())
+
+results = soup.find(id="app")
+print(results.prettify())
+
+log_elements = results.find_all("div", class_="flex-grow content-p pb-0")
 
 
-# setting the URL you want to monitor
-url = Request('https://suite.auterion.com/flights?page=1&sortDirection=desc&sortBy=date&type=flight',
-              headers=headers)
+
+
+#####################################################
+# DIFFERENT SECTION
+#####################################################
+
+# # setting the URL you want to monitor
+# url = Request('https://suite.auterion.com/flights?type=flight&page=1&sortDirection=desc&sortBy=date',
+#               headers=headers)
  
-# to perform a GET request and load the
-# content of the website and store it in a var
-response = urlopen(url).read()
+# # to perform a GET request and load the
+# # content of the website and store it in a var
+# hashresponse = urlopen(url).read()
  
-# to create the initial hash
-currentHash = hashlib.sha224(response).hexdigest()
-print("running")
-time.sleep(10)
-while True:
-    try:
-        # perform the get request and store it in a var
-        response = urlopen(url).read()
+# # to create the initial hash
+# currentHash = hashlib.sha224(hashresponse).hexdigest()
+# print("running")
+# time.sleep(10)
+# while True:
+#     try:
+#         # perform the get request and store it in a var
+#         hashresponse = urlopen(url).read()
          
-        # create a hash
-        currentHash = hashlib.sha224(response).hexdigest()
+#         # create a hash
+#         currentHash = hashlib.sha224(hashresponse).hexdigest()
          
-        # wait for 30 seconds
-        time.sleep(30)
+#         # wait for 30 seconds
+#         time.sleep(30)
          
-        # perform the get request
-        response = urlopen(url).read()
+#         # perform the get request
+#         hashresponse = urlopen(url).read()
          
-        # create a new hash
-        newHash = hashlib.sha224(response).hexdigest()
+#         # create a new hash
+#         newHash = hashlib.sha224(hashresponse).hexdigest()
  
-        # check if new hash is same as the previous hash
-        if newHash == currentHash:
-            print('still running')
-            continue
+#         # check if new hash is same as the previous hash
+#         if newHash == currentHash:
+#             print('still running')
+#             continue
  
-        # if something changed in the hashes
-        else:
-            # notify
-            print("something changed")
+#         # if something changed in the hashes
+#         else:
+#             # notify
+#             print("something changed")
  
-            # again read the website
-            response = urlopen(url).read()
+#             # again read the website
+#             hashresponse = urlopen(url).read()
  
-            # create a hash
-            currentHash = hashlib.sha224(response).hexdigest()
+#             # create a hash
+#             currentHash = hashlib.sha224(hashresponse).hexdigest()
  
-            # wait for 30 seconds
-            time.sleep(30)
-            continue
+#             # wait for 30 seconds
+#             time.sleep(30)
+#             continue
              
-    # To handle exceptions
-    except Exception as e:
-        print("error")
+#     # To handle exceptions
+#     except Exception as e:
+#         print("error")
