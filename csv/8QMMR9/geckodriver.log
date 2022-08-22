@@ -1,0 +1,68 @@
+1661205316422	geckodriver	INFO	Listening on 127.0.0.1:40093
+1661205316424	mozrunner::runner	INFO	Running command: "/usr/bin/firefox" "--marionette" "--remote-debugging-port" "45423" "--remote-allow-hosts" "localhost" "-no-remote" "-profile" "/tmp/rust_mozprofileDV26Df"
+[GFX1-]: glxtest: VA-API test failed: failed to initialise VAAPI connection.
+ATTENTION: default value of option mesa_glthread overridden by environment.
+ATTENTION: default value of option mesa_glthread overridden by environment.
+ATTENTION: default value of option mesa_glthread overridden by environment.
+ATTENTION: default value of option mesa_glthread overridden by environment.
+1661205316886	Marionette	INFO	Marionette enabled
+1661205316889	Marionette	INFO	Listening on port 35917
+WebDriver BiDi listening on ws://localhost:45423
+Read port: 35917
+1661205316949	RemoteAgent	WARN	TLS certificate errors will be ignored for this session
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new NotFoundError("Could not open the file at /tmp/rust_mozprofileDV26Df/search.json.mozlz4", (void 0)))
+Missing chrome or resource URL: resource://gre/modules/UpdateListener.jsm
+Missing chrome or resource URL: resource://gre/modules/UpdateListener.sys.mjs
+DevTools listening on ws://localhost:45423/devtools/browser/15039317-7acf-4c3b-a778-63efbd43847b
+console.warn: LoginRecipes: "getRecipes: falling back to a synchronous message for:" "https://suite.auterion.com"
+console.warn: LoginRecipes: "getRecipes: falling back to a synchronous message for:" "https://suite.auterion.com"
+JavaScript error: resource://gre/modules/LoginManagerParent.jsm, line 136: TypeError: gRecipeManager is null
+1661205330219	Marionette	INFO	Stopped listening on port 35917
+Missing chrome or resource URL: resource://gre/modules/UpdateListener.jsm
+Missing chrome or resource URL: resource://gre/modules/UpdateListener.sys.mjs
+console.error: "Error during quit-application-granted: [Exception... \"File error: Not found\"  nsresult: \"0x80520012 (NS_ERROR_FILE_NOT_FOUND)\"  location: \"JS frame :: resource:///modules/BrowserGlue.jsm :: _onQuitApplicationGranted/tasks< :: line 2006\"  data: no]"
+Sandbox: Unexpected EOF, op 0 flags 00 path /proc/cpuinfo
+1661205335571	geckodriver	INFO	Listening on 127.0.0.1:33159
+1661205335572	mozrunner::runner	INFO	Running command: "/usr/bin/firefox" "--marionette" "--remote-debugging-port" "37519" "--remote-allow-hosts" "localhost" "-no-remote" "-profile" "/tmp/rust_mozprofileigidsP"
+[GFX1-]: glxtest: VA-API test failed: failed to initialise VAAPI connection.
+ATTENTION: default value of option mesa_glthread overridden by environment.
+ATTENTION: default value of option mesa_glthread overridden by environment.
+ATTENTION: default value of option mesa_glthread overridden by environment.
+ATTENTION: default value of option mesa_glthread overridden by environment.
+1661205336058	Marionette	INFO	Marionette enabled
+1661205336061	Marionette	INFO	Listening on port 44629
+WebDriver BiDi listening on ws://localhost:37519
+Read port: 44629
+1661205336122	RemoteAgent	WARN	TLS certificate errors will be ignored for this session
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new NotFoundError("Could not open the file at /tmp/rust_mozprofileigidsP/search.json.mozlz4", (void 0)))
+Missing chrome or resource URL: resource://gre/modules/UpdateListener.jsm
+Missing chrome or resource URL: resource://gre/modules/UpdateListener.sys.mjs
+DevTools listening on ws://localhost:37519/devtools/browser/5ab28119-810f-4a14-abe4-e95b64881413
+console.warn: LoginRecipes: "getRecipes: falling back to a synchronous message for:" "https://suite.auterion.com"
+console.warn: LoginRecipes: "getRecipes: falling back to a synchronous message for:" "https://suite.auterion.com"
+JavaScript error: resource://gre/modules/LoginManagerParent.jsm, line 136: TypeError: gRecipeManager is null
+Exiting due to channel error.
+Exiting due to channel error.
+Exiting due to channel error.
+1661205384354	geckodriver	INFO	Listening on 127.0.0.1:59763
+1661205384356	mozrunner::runner	INFO	Running command: "/usr/bin/firefox" "--marionette" "--remote-debugging-port" "60657" "--remote-allow-hosts" "localhost" "-no-remote" "-profile" "/tmp/rust_mozprofile0iS6ho"
+[GFX1-]: glxtest: VA-API test failed: failed to initialise VAAPI connection.
+ATTENTION: default value of option mesa_glthread overridden by environment.
+ATTENTION: default value of option mesa_glthread overridden by environment.
+ATTENTION: default value of option mesa_glthread overridden by environment.
+ATTENTION: default value of option mesa_glthread overridden by environment.
+1661205384811	Marionette	INFO	Marionette enabled
+1661205384815	Marionette	INFO	Listening on port 36921
+WebDriver BiDi listening on ws://localhost:60657
+Read port: 36921
+1661205384934	RemoteAgent	WARN	TLS certificate errors will be ignored for this session
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new NotFoundError("Could not open the file at /tmp/rust_mozprofile0iS6ho/search.json.mozlz4", (void 0)))
+Missing chrome or resource URL: resource://gre/modules/UpdateListener.jsm
+Missing chrome or resource URL: resource://gre/modules/UpdateListener.sys.mjs
+DevTools listening on ws://localhost:60657/devtools/browser/5a4ed70c-16a0-49a1-b00b-0ae4120a613a
+console.warn: LoginRecipes: "getRecipes: falling back to a synchronous message for:" "https://suite.auterion.com"
+console.warn: LoginRecipes: "getRecipes: falling back to a synchronous message for:" "https://suite.auterion.com"
+JavaScript error: resource://gre/modules/LoginManagerParent.jsm, line 136: TypeError: gRecipeManager is null
+Exiting due to channel error.
+Exiting due to channel error.
+Exiting due to channel error.
