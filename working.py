@@ -37,18 +37,33 @@ driver.find_element('xpath','/html/body/div[1]/div/div[1]/div/div/div/div/button
 
 driver.implicitly_wait(10)
 
-recentFlightLogID = driver.find_element('xpath','/html/body/div[1]/div/div[1]/div[2]/div/div[2]/div/table/tbody/tr[1]/td[1]/div/div')
+recentFlightLogID = driver.find_element('xpath','/html/body/div[1]/div/div[1]/div[2]/div/div[2]/div/table/tbody/tr[1]/td[1]/div/div').get_attribute('innerHTML')
 
-driver.find_element('xpath','/html/body/div[1]/div/div[1]/div[2]/div/div[2]/div/table/tbody/tr[1]/td[1]/div/a').click() #Most recent flight log
+previousFlightLogID = '8QMMR9 <!---->'
 
-driver.implicitly_wait(6)
-
-driver.find_element('xpath','/html/body/div[1]/div/div[1]/div[2]/div/div/div[1]/div[2]/div[1]/a[3]').click() #Logs Tab
-
-driver.implicitly_wait(3)
-
-driver.find_element('xpath','/html/body/div[1]/div/div[1]/div[2]/div/div/div[2]/div/div[2]/div/div[1]/div/div[1]/button').click() #3 dot button
-
-driver.implicitly_wait(1)
-
-driver.find_element('xpath','/html/body/div[1]/div/div[1]/div[2]/div/div/div[2]/div/div[2]/div/div[1]/div/div[2]/div[2]/div/div[2]/form/button').click() #Original file download button
+if recentFlightLogID == previousFlightLogID:
+    
+    previousFlightLogID = recentFlightLogID
+    print('No new flight logs')
+    driver.implicitly_wait(1)
+    driver.quit()
+    
+    
+if recentFlightLogID != previousFlightLogID:
+        
+    driver.find_element('xpath','/html/body/div[1]/div/div[1]/div[2]/div/div[2]/div/table/tbody/tr[1]/td[1]/div/a').click() #Most recent flight log
+    driver.implicitly_wait(6)
+    
+    driver.find_element('xpath','/html/body/div[1]/div/div[1]/div[2]/div/div/div[1]/div[2]/div[1]/a[3]').click() #Logs Tab
+    driver.implicitly_wait(3)
+    
+    driver.find_element('xpath','/html/body/div[1]/div/div[1]/div[2]/div/div/div[2]/div/div[2]/div/div[1]/div/div[1]/button').click() #3 dot button
+    driver.implicitly_wait(1)
+        
+    driver.find_element('xpath','/html/body/div[1]/div/div[1]/div[2]/div/div/div[2]/div/div[2]/div/div[1]/div/div[2]/div[2]/div/div[2]/form/button').click() #Original file download button
+    
+    previousFlightLogID = recentFlightLogID
+    
+    print('New flight log detected, downloading now')
+    driver.implicitly_wait(1)
+    driver.quit()
