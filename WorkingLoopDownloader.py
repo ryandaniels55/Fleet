@@ -14,7 +14,7 @@ import time
 import shutil
 from selenium.webdriver.common.by import By
 from selenium.webdriver.common.keys import Keys
-import RC_Control_Loss_Script
+import RC_Control_Loss_Script as RC
 # from selenium.webdriver.support.ui import WebDriverWait
 # from selenium.webdriver.support import expected_conditions as EC
 
@@ -40,14 +40,14 @@ while True:
     email.send_keys('ryan.daniels@wattsinnovations.com') # Insert email here
 
     password = driver.find_element(By.CLASS_NAME, 'password')
-    password.send_keys('Chilidogs!') # Insert password here
+    password.send_keys('xxxxx') # Insert password here
 
     driver.find_element('xpath','/html/body/div[1]/div/div[1]/div/div/div/div/button').click() # Login Button
 
     driver.implicitly_wait(15)
 
     recentFlightLogID = driver.find_element('xpath','/html/body/div[1]/div/div[1]/div[2]/div/div[2]/div/table/tbody/tr[1]/td[1]/div/div').get_attribute('innerHTML')
-    recentFlightLogID = recentFlightLogID[:-8]
+    recentFlightLogID = recentFlightLogID[:6]
 
     if recentFlightLogID == previousFlightLogID:
         
@@ -67,7 +67,7 @@ while True:
         
         time.sleep(2)
         ulog_name = driver.find_element('xpath','/html/body/div[1]/div/div[1]/div[2]/div/div/div[2]/div/div[2]/div/div[1]/a').get_attribute('innerHTML')
-        ulog_name = ulog_name[:-8]
+        ulog_name = ulog_name[:29]
         
         driver.find_element('xpath','/html/body/div[1]/div/div[1]/div[2]/div/div/div[2]/div/div[2]/div/div[1]/div/div[1]/button').click() #3 dot button
         driver.implicitly_wait(10)
@@ -82,7 +82,7 @@ while True:
         
         downloads_path = str(Path.home() / "Downloads")+'/'
         recentFlightLogID_ulog = recentFlightLogID+'.ulg'
-        os.rename( downloads_path+ulog_name, downloads_path+recentFlightLogID_ulog)
+        os.rename(downloads_path+ulog_name, downloads_path+recentFlightLogID_ulog)
         output = cur+'/csv'+'/'+recentFlightLogID
         csv_output = cur+'/csv'+'/'+recentFlightLogID
         ulog_output = cur+'/ulog'+'/'+recentFlightLogID
@@ -102,6 +102,10 @@ while True:
         os.chdir(csv_output)
         
         # DATA ANALYSIS GOES HERE
+        
+        if __name__ == '__main__':
+            
+            RC.RC_control_loss(recentFlightLogID)
         
         # winch0 = recentFlightLogID+'_winch_status_0.csv'
         # winchdata = output+'/'+winch0
